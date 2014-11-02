@@ -67,6 +67,7 @@ class PublicQueryResponseHandler(base.BaseHandler):
       content = proxy_error.content
       status = proxy_error.status
 
+    self.response.headers['Access-Control-Allow-Origin'] = '*'
     transform.Render(self, content, status)
 
 
